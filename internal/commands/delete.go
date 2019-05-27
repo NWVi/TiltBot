@@ -4,12 +4,14 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+
+	"github.com/bwmarrin/discordgo"
 )
 
 // Delete makes the bot delete messages in a text channel
 func Delete(ctx Context) {
 	// Check if user has permission to manage messages
-	perm, err := MemberHasPermission(ctx.Session, ctx.Guild.ID, ctx.Message.Author.ID, 8192)
+	perm, err := MemberHasPermission(ctx.Session, ctx.Guild.ID, ctx.Message.Author.ID, discordgo.PermissionManageMessages)
 	if err != nil {
 		log.Println(err)
 	}

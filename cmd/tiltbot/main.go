@@ -119,4 +119,5 @@ func registerCommands() {
 	cmdHandler.Register("help", "Shows list of commands", commands.Help)
 	cmdHandler.Register("delete", "Deletes messages in channel\n Arguments: `all`, `bot` or `1-100` ", commands.Delete)
 	cmdHandler.Register("flip", "Flips a coin", commands.CoinFlip)
+	cmdHandler.Register("rename", "Renames members of the server", commands.Rename)
 }
