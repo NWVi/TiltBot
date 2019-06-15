@@ -1,6 +1,7 @@
 package commands
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/NWVi/TiltBot/pkg/namegenerator"
@@ -39,7 +40,8 @@ func Rename(ctx Context) {
 	for _, memb := range members {
 		userName := memb.User.Username
 		// fmt.Println("Member:", userName)
-		newName, err := namegenerator.Webscraper(30)
+		// newName, err := namegenerator.Webscraper(30)
+		newName, err := namegenerator.PickName()
 		if err != nil {
 			log.Println("Error generating nickname:", err)
 		}
@@ -55,5 +57,6 @@ func Rename(ctx Context) {
 			}
 		}
 	}
+	fmt.Println("Finished renaming")
 	// members := guild.Members
 }

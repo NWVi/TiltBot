@@ -16,7 +16,7 @@ import (
 
 // Prefix for commands
 const (
-	PREFIX string = "!"
+	PREFIX string = ":"
 )
 
 // Variables used for commandline parameters
@@ -120,4 +120,5 @@ func registerCommands() {
 	cmdHandler.Register("delete", "Deletes messages in channel\n Arguments: `all`, `bot` or `1-100` ", commands.Delete)
 	cmdHandler.Register("flip", "Flips a coin", commands.CoinFlip)
 	cmdHandler.Register("rename", "Renames members of the server", commands.Rename)
+	cmdHandler.Register("grole", "Gives users without a role the lowest role available", commands.GiveRole)
 }
